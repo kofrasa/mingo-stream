@@ -1,2 +1,32 @@
 # mingo-stream
-Streaming functionality for Mingo query library
+Streaming functionality for [Mingo](https://github.com/kofrasa/mingo) query library
+
+[![version](https://img.shields.io/npm/v/mingo-stream.svg)](https://www.npmjs.org/package/mingo-stream)
+[![build status](https://secure.travis-ci.org/kofrasa/mingo-stream.png)](http://travis-ci.org/kofrasa/mingo-stream)
+
+
+## Stream Filtering
+This example uses the [JSONStream](https://www.npmjs.com/package/JSONStream) package
+```js
+var JSONStream = require('JSONStream'),
+    fs = require('fs'),
+    Mingo = require('mingo');
+
+var query = new Mingo.Query({
+  scores: { $elemMatch: {type: "exam", score: {$gt: 90}} }
+}, {name: 1});
+
+file = fs.createReadStream('./students.json');
+
+var qs = query.stream();
+qs.on('data', function (data) {
+    console.log(data); // log filtered outputs
+    // ex. { name: 'Dinah Sauve', _id: 49 }
+});
+
+// file stream | json stream | query stream
+file.pipe(JSONStream.parse("*")).pipe(qs);
+```
+
+## License
+MIT

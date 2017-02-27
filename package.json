@@ -1,0 +1,52 @@
+{
+  "name": "mingo-stream",
+  "version": "0.0.1",
+  "description": "Streaming functionality for Mingo query library",
+  "main": "mingo-stream.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test",
+    "build": "make build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kofrasa/mingo-stream.git"
+  },
+  "files": [
+    "mingo-stream.js",
+    "dist/mingo-stream.min.js",
+    "dist/mingo-stream.min.js.gz",
+    "dist/mingo-stream.min.map",
+    "Makefile",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "dependencies": {
+    "mingo": "0.9.0"
+  },
+  "devDependencies": {
+    "gulp": ">=3.9.x",
+    "tape": ">=4.x.x",
+    "uglify-js": "2.x.x"
+  },
+  "keywords": [
+    "util",
+    "mingo",
+    "mongo",
+    "mongodb",
+    "nosql",
+    "query",
+    "browser",
+    "querying",
+    "stream",
+    "streaming"
+  ],
+  "author": "Francis Asante <kofrasa@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kofrasa/mingo-stream/issues"
+  }
+}
