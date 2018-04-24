@@ -5,7 +5,7 @@ var Transform = require('stream').Transform
 var util = require('util')
 var _ = mingo._internal()
 
-var VERSION = '0.0.2'
+var VERSION = '0.1.0'
 
 /**
  * Create a Transform class

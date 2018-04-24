@@ -1,6 +1,6 @@
 {
   "name": "mingo-stream",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Streaming functionality for Mingo query library",
   "main": "index.js",
   "directories": {
