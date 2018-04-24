@@ -2,7 +2,8 @@
 NodeJS streaming functionality for [mingo](https://github.com/kofrasa/mingo) query library
 
 [![version](https://img.shields.io/npm/v/mingo-stream.svg)](https://www.npmjs.org/package/mingo-stream)
-[![build status](https://secure.travis-ci.org/kofrasa/mingo-stream.png)](http://travis-ci.org/kofrasa/mingo-stream)
+[![build status](https://img.shields.io/travis/kofrasa/mingo-stream.svg)](http://travis-ci.org/kofrasa/mingo-stream)
+[![npm](https://img.shields.io/npm/dm/mingo-stream.svg)](https://www.npmjs.org/package/mingo-stream)
 
 ## install
 ```sh
