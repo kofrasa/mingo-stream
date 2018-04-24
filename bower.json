@@ -1,7 +1,7 @@
 {
   "name": "mingo-stream",
   "main": "mingo-stream.js",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "homepage": "https://github.com/kofrasa/mingo-stream",
   "authors": [
     "Francis Asante <kofrasa@gmail.com>"
