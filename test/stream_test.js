@@ -2,9 +2,11 @@ var fs = require('fs'),
     Transform = require('stream').Transform,
     util = require('util');
     test = require('tape'),
-    Mingo = require('mingo');
-    
-var _ = Mingo._internal();
+    mingo = require('mingo');
+
+require('../index')
+
+var _ = mingo._internal();
 
 test("JSON Stream filtering", function (t) {
   t.plan(2);
@@ -28,7 +30,7 @@ test("JSON Stream filtering", function (t) {
 
   var found2Keys = true;
   var cursor;
-  var query = new Mingo.Query({
+  var query = new mingo.Query({
     scores: {$elemMatch: {type: "exam", score: {$gt: 90}}}
   }, {name: 1});
 

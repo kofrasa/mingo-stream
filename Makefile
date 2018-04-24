@@ -1,4 +1,6 @@
 
+UGLIFY = node_modules/.bin/uglifyjs
+
 all: clean test build
 
 test:
@@ -9,8 +11,8 @@ clean:
 
 build:
 	@mkdir -p dist/
-	@uglifyjs mingo-stream.js -c -m -o dist/mingo-stream.min.js --source-map dist/mingo-stream.min.map
-	@gzip -kf dist/mingo-stream.min.js
+	@cp index.js dist/mingo-stream.js
+	@${UGLIFY} index.js -c -m -o dist/mingo-stream.min.js --source-map dist/mingo-stream.min.map
 	@echo "\033[0;32mBUILD SUCCEEDED"
 
 .PHONY: clean test build

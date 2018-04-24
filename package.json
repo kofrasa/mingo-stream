@@ -1,8 +1,8 @@
 {
   "name": "mingo-stream",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Streaming functionality for Mingo query library",
-  "main": "mingo-stream.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -15,22 +15,20 @@
     "url": "https://github.com/kofrasa/mingo-stream.git"
   },
   "files": [
-    "mingo-stream.js",
-    "dist/mingo-stream.min.js",
-    "dist/mingo-stream.min.js.gz",
-    "dist/mingo-stream.min.map",
+    "index.js",
+    "dist",
     "Makefile",
     "LICENSE",
     "README.md",
     "CHANGELOG.md"
   ],
   "dependencies": {
-    "mingo": "1.0.0"
+    "mingo": ">=2.x.x"
   },
   "devDependencies": {
     "gulp": ">=3.9.x",
     "tape": ">=4.x.x",
-    "uglify-js": "2.x.x"
+    "uglify-js": "2.6.x"
   },
   "keywords": [
     "util",

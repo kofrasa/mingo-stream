@@ -1,17 +1,17 @@
 'use strict'
 
-var Mingo = require('mingo')
+var mingo = require('mingo')
 var Transform = require('stream').Transform
 var util = require('util')
-var _ = Mingo._internal()
+var _ = mingo._internal()
 
-var VERSION = '0.0.1'
+var VERSION = '0.0.2'
 
 /**
  * Create a Transform class
  * @param query
  * @param options
- * @returns {Mingo.Stream}
+ * @returns {mingo.Stream}
  * @constructor
  */
 function Stream (query, options) {
@@ -23,18 +23,18 @@ function Stream (query, options) {
   Object.assign(options, { objectMode: true })
   Transform.call(this, options)
   // query for this stream
-  this._query = query
+  this.__query = query
 }
 // extend Transform
 util.inherits(Stream, Transform)
 Stream.VERSION = VERSION // version
 
 Stream.prototype._transform = function (chunk, encoding, done) {
-  if (_.isObject(chunk) && this._query.test(chunk)) {
-    if (_.isEmpty(this._query._projection)) {
+  if (_.isObject(chunk) && this.__query.test(chunk)) {
+    if (_.isEmpty(this.__query.__projection)) {
       this.push(chunk)
     } else {
-      var cursor = new Mingo.Cursor([chunk], this._query)
+      var cursor = new mingo.Cursor([chunk], this.__query)
       if (cursor.hasNext()) {
         this.push(cursor.next())
       }
@@ -43,8 +43,8 @@ Stream.prototype._transform = function (chunk, encoding, done) {
   done()
 }
 
-Mingo.Query.prototype.stream = function (options) {
-  return new Mingo.Stream(this, options)
+mingo.Query.prototype.stream = function (options) {
+  return new mingo.Stream(this, options)
 }
 
-module.exports = Mingo.Stream = Stream
+module.exports = mingo.Stream = Stream
