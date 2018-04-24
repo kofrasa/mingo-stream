@@ -1,5 +1,5 @@
 # mingo-stream
-Streaming functionality for [Mingo](https://github.com/kofrasa/mingo) query library
+NodeJS streaming functionality for [mingo](https://github.com/kofrasa/mingo) query library
 
 [![version](https://img.shields.io/npm/v/mingo-stream.svg)](https://www.npmjs.org/package/mingo-stream)
 [![build status](https://secure.travis-ci.org/kofrasa/mingo-stream.png)](http://travis-ci.org/kofrasa/mingo-stream)
